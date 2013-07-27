@@ -1,0 +1,19 @@
+escape ^]]
+
+screen -t emacs    # 0
+screen -t vim      # 1
+screen -t services # 2
+screen -t git      # 3
+screen -t repl     # 4
+screen -t remote   # 5
+screen -t dbshell  # 6
+screen -t tests    # 7
+screen -t misc     # 8
+select 0
+
+term screen-256color
+
+shell -bash
+startup_message off
+hardstatus alwayslastline
+hardstatus string '%{gk}[ %{G}%H %{g}][%= %{wk}%?%-Lw%?%{=b kR} (%{W}%n*%f %t%?(%u)%?%{=b kR})%{= kw}%?%+Lw%?%?%= %{g}][%{Y}%l%{g}] %{=b C}[ %m/%d %c ]%{W}'
