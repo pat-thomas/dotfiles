@@ -1,8 +1,12 @@
 color molokai
 command! -nargs=* -bar -bang -count=0 -complete=dir E Explore <args>
 
-"automatically close parens
+"automatically close parens, square brackets, and curly braces
 inoremap        (  ()<Left>
-inoremap        [  []<Left>
 inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
-inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : ")"
+
+inoremap        [  []<Left>
+inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : "]"
+
+inoremap        {  {}<Left>
+inoremap <expr> }  strpart(getline('.'), col('.')-1, 1) == "}" ? "\<Right>" : "}"
