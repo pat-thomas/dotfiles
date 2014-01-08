@@ -1,0 +1,8 @@
+color molokai
+command! -nargs=* -bar -bang -count=0 -complete=dir E Explore <args>
+
+"automatically close parens
+inoremap        (  ()<Left>
+inoremap        [  []<Left>
+inoremap <expr> )  strpart(getline('.'), col('.')-1, 1) == ")" ? "\<Right>" : ")"
+inoremap <expr> ]  strpart(getline('.'), col('.')-1, 1) == "]" ? "\<Right>" : ")"
